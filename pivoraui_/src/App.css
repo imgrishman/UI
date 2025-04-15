@@ -1,0 +1,324 @@
+/* App.css */
+:root {
+  --bg-color: #f5f5f7;
+  --text-color: #1d1d1f;
+  --card-bg: #ffffff;
+  --card-border: #d2d2d7;
+  --primary-color: #0071e3;
+  --secondary-bg: #fafafa;
+  --primary-color-rgb: 0, 113, 227; /* RGB value for hover effect */
+}
+
+[data-theme="dark"] {
+  --bg-color: #1d1d1f;
+  --text-color: #f5f5f7;
+  --card-bg: #2c2c2e;
+  --card-border: #3a3a3c;
+  --primary-color: #2997ff;
+  --secondary-bg: #1d1d1f;
+  --primary-color-rgb: 41, 151, 255; /* RGB value for hover effect */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+}
+
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+ 
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px;
+  justify-content: center;
+}
+
+.pivora-logo {
+  height: 80px; /* Adjust logo size */
+  width: auto;
+}
+
+.side-by-side-container {
+  display: flex;
+  flex: 1;
+  gap: 25px;
+  padding: 20px  55px;
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 0.6;
+  height: 100%;
+}
+
+.right-panel {
+  flex: 0.4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FilePreview Styles */
+.file-preview {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 16px 20px; /* Reduced padding */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);   
+  border: 1px solid var(--card-border);
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.file-preview .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.file-preview .section-header h2 {
+  font-size: 16px; /* Reduced font size */
+  font-weight: 600;
+  margin: 0;
+}
+
+.file-preview .file-type-badge {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  padding: 4px 8px; /* Reduced padding */
+  border-radius: 100px;
+  font-size: 10px; /* Reduced font size */
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.file-preview .preview-container {
+  flex: 1;
+  border-radius: 12px;
+  overflow: auto;
+  background: var(--secondary-bg);
+}
+
+.file-preview .document-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  display: block;
+  object-fit: contain;
+  background: white;
+}
+
+.file-preview .file-info-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px; /* Reduced margin */
+  padding-top: 10px; /* Reduced padding */
+  border-top: 1px solid var(--card-border);
+  font-size: 10px; /* Reduced font size */
+  color: var(--text-color);
+}
+
+.file-preview .file-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap */
+}
+
+.file-preview .file-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Reduced max width */
+  font-size: 11px; /* Reduced font size */
+}
+
+.file-preview .file-size {
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-left: auto;
+  font-size: 10px; /* Reduced font size */
+}
+
+.file-preview .placeholder-text {
+  padding: 10px; /* Reduced padding */
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.6;
+  text-align: center;
+  font-size: 12px; /* Reduced font size */
+}
+
+/* AnalysisResults Styles */
+.analysis-results {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 16px; /* Reduced padding */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
+  height: 175%;
+  flex: 0.6; /* Adjust flex for spacing */
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-header {
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.analysis-header h2 {
+  font-size: 16px; /* Reduced font size */
+  font-weight: 600;
+  margin: 0;
+}
+
+.analysis-results .results-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--card-border);
+  padding: 16px; /* Reduced padding */
+  overflow: hidden;
+}
+
+.analysis-results .analysis-title {
+  font-size: 20px; /* Slightly smaller title */
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.analysis-results .loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Reduced gap */
+  height: 100%;
+}
+
+.analysis-results .loading-spinner {
+  width: 18px; /* Reduced spinner size */
+  height: 18px; /* Reduced spinner size */
+  border: 2px solid rgba(var(--primary-color), 0.2); /* Thinner border */
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* BottomDragDrop Styles */
+.bottom-section {
+  margin-top: 15px; /* Reduced margin */
+}
+
+.bottom-drag-drop-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  padding: 10px; /* Reduced padding */
+  background: var(--card-bg);
+  border-radius: 18px;
+  height:25%;
+  justify-content: center;
+}
+
+.bottom-drag-drop-container .drag-drop-area {
+  flex: 1;
+  border: 1px dashed var(--card-border); /* Thinner border */
+  border-radius: 8px; /* Smaller border radius */
+  padding: 10px; /* Reduced padding */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px; 
+  max-width: 50%;
+  
+  /* Reduced min height */
+}
+
+.bottom-drag-drop-container .drag-drop-area.dragging {
+  border-color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.bottom-drag-drop-container .drag-drop-area svg {
+  fill: var(--primary-color);
+  width: 24px; /* Reduced icon size */
+  height: 24px; /* Reduced icon size */
+}
+
+.bottom-drag-drop-container .drag-drop-area p {
+  margin-top: 5px; /* Reduced margin */
+  color: var(--text-color);
+  font-size: 10px; /* Reduced font size */
+}
+
+.bottom-drag-drop-container .change-file-button {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color); /* Add border */
+  padding: 6px 12px; /* Reduced padding */
+  border-radius: 6px; /* Reduced border radius */
+  font-size: 10px; /* Reduced font size */
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  height: fit-content;
+  background: transparent;
+}
+
+.bottom-drag-drop-container .change-file-button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .side-by-side-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 70vh;
+    padding: 10px; /* Adjust padding for smaller screens */
+    gap: 10px; /* Adjust gap for smaller screens */
+  }
+
+  .left-panel, .right-panel {
+    flex: 1; /* Both panels take full width */
+  }
+
+  .bottom-section {
+    margin-top: 10px; /* Adjust margin for smaller screens */
+  }
+
+  .bottom-drag-drop-container {
+    flex-direction: column; /* Stack buttons on smaller screens */
+    gap: 10px;
+  }
+
+  .bottom-drag-drop-container .change-file-button {
+    width: 100%; /* Make button full width */
+  }
+}

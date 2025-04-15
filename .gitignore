@@ -1,0 +1,26 @@
+.vscode/extensions/
+# Ignore system files
+*.lnk
+.DS_Store
+Thumbs.db
+
+# Ignore VSCode extensions and settings
+.vscode/
+../../.vscode/
+
+# Ignore OS-level folders accidentally added
+../../AppData/
+../../OneDrive/
+../../Contacts/
+../../Music/
+../../Videos/
+../../Saved Games/
+../../Favorites/
+../../Searches/
+../../NTUSER*
+
+# Node / React
+node_modules/
+dist/
+build/
+.env
